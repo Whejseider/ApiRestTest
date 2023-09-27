@@ -24,6 +24,3 @@ logging:
     org:
       springframework:
         security: DEBUG
-
-server:
-  port: 443
