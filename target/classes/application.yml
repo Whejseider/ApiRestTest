@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://ep-silent-forest-55478512.us-east-2.aws.neon.tech/brettadb
+    username: frannvallone
+    password: WKCvcbrT36yu
+    driver-class-name: org.postgresql.Driver
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 08c5a20c28137d485af2
+            clientSecret: b3080246730352dfa7a86a2c1079ce853174a2a6
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
