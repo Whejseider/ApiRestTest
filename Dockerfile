@@ -1,9 +1,15 @@
-FROM eclipse-temurin:17-jdk-alpine AS build
+#
+# Build stage
+#
+FROM maven:3.8.2-jdk-11 AS build
 COPY . .
-RUN mvn clean package -DskipTests
+RUN mvn clean package -Pprod -DskipTests
 
-FROM openjdk:19
+#
+# Package stage
+#
+FROM openjdk:11-jdk-slim
 COPY --from=build /target/brettaApiRest-0.0.1-SNAPSHOT.jar brettaApiRest-0.0.1-SNAPSHOT.jar
-
+# ENV PORT=8080
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","brettaApiRest-0.0.1-SNAPSHOT.jar"]
