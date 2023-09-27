@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .error-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #d9534f; /* Rojo */
+            margin-top: 0;
+        }
+
+        img {
+            width: auto;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container">
+        <h2>Bretta Food Truck</h2>
+    </div>
+</nav>
+<div class="container error-container">
+    <h1 th:text="${errorCode} + ' ' + ${errorMessage}"></h1>
+    <img th:src="${errorImage}" alt="Cat Image">
+</div>
+</body>
+</html>
